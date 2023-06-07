@@ -12,5 +12,5 @@ public class Entity
     public string? Rank { get; set; }
     public string? Position { get; set; }
     public string? Species { get; set; }
-    public bool? EatenByArmus { get; set; }
+    public bool EatenByArmus { get; set; }
 }

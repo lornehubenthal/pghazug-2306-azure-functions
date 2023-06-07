@@ -1,0 +1,10 @@
+﻿Name,Rank,Position,Species,EatenByArmus
+Jean-Luc Picard,Captain,CO,Human,FALSE
+William Riker,Commander,XO,Human,FALSE
+Data,Lt. Commander,Ops,Android,FALSE
+Worf,Lieutenant,Tactical,Klingon,FALSE
+Beverly Crusher,Commander,CMO,Human,FALSE
+Geordi LaForge,Lt. Commander,Chief Engineer,Human,FALSE
+Tasha Yar,Lieutenant,Chief Security Officer,Human,TRUE
+Wesley Crusher,Acting Ensign,Helm,Human,FALSE
+Deanna Troi,Lt. Commander,Counselor,Betazoid/Human,FALSE
