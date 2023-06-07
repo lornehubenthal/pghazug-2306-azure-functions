@@ -43,7 +43,7 @@ public class Content
     {
     }
 
-    public Content(string value, string type = "plain/text")
+    public Content(string value, string type = "text/plain")
     {
         Type = type;
         Value = value;
