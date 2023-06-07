@@ -7,10 +7,10 @@ namespace PghAzUg.FunctionAppDemo.CSharp;
 public static class LogCrewMembers
 {
    
-    [Function("LogCrewMembers")]
+    [Function("LogCrewMember")]
     public static LogCrewMemberResponse LogCrewMember([ServiceBusTrigger("process-entity", Connection = "AzureServiceBus")] EntityMessage message, FunctionContext context)
     {
-        ILogger logger = context.GetLogger("LogCrewMembers");
+        ILogger logger = context.GetLogger("LogCrewMember");
         logger.LogInformation("C# ServiceBus queue trigger function processed message for Job ID: {JobID} Crew Name: {Name}", message.JobId, message.Data?.Name);
 
         if (message.Data == null)
@@ -22,10 +22,10 @@ public static class LogCrewMembers
         return new LogCrewMemberResponse { CrewMember = message.Data };
     }
     
-    [Function("LogCrewMembersError")]
+    [Function("LogCrewMemberError")]
     public static LogCrewMemberErrorResponse LogCrewMemberError([ServiceBusTrigger("process-entity/$DeadLetterQueue", Connection = "AzureServiceBus")] EntityMessage message, FunctionContext context)
     {
-        ILogger logger = context.GetLogger("LogCrewMembers");
+        ILogger logger = context.GetLogger("LogCrewMemberError");
         logger.LogInformation("C# ServiceBus dead letter queue trigger function processed message for Job ID: {JobID} Crew Name: {Name}", message.JobId, message.Data?.Name);
 
         return new LogCrewMemberErrorResponse { CrewMember = message.Data };
