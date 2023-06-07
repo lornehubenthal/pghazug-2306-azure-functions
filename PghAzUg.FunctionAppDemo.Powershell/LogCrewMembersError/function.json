@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "name": "mySbMsg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "process-entity-ps/$DeadLetterQueue",
+      "connection": "AzureServiceBus"
+    },
+    {
+      "name": "myOutputBlob",
+      "type": "blob",
+      "path": "failed/{JobId}/{Data.Name}.json",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    }
+  ]
+}

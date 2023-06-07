@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "name": "mySbMsg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "process-entity-ps",
+      "connection": "AzureServiceBus"
+    },
+    {
+      "name": "myOutputBlob",
+      "type": "blob",
+      "path": "processed/{JobId}/{Data.Name}.json",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    }
+  ],
+  "disabled": true
+}

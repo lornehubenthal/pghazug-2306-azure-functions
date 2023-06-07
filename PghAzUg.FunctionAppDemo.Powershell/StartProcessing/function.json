@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "name": "InputBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "submissions/{name}.{extension}",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "serviceBus",
+      "direction": "out",
+      "connection": "AzureServiceBus",
+      "name": "outputSbMsg",
+      "queueName": "process-entity-ps"
+    }
+  ]
+}
