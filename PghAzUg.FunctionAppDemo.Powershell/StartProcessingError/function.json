@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "name": "QueueItem",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "webjobs-blobtrigger-poison",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "sendGrid",
+      "name": "message",
+      "direction": "out",
+      "apiKey": "AzureWebJobsSendGridApiKey",
+      "from": "NoReply <noreply@lorne.dev>",
+      "to": "demo-user-ps@mailinator.com",
+      "subject": "",
+      "text": ""
+    }
+  ]
+}
